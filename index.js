@@ -1408,9 +1408,24 @@ function getNode({ url, title, image, description }) {
         </div>
 
         <div class="dec">
-          ${description}
+          ${textLengthOverCut(description, 60, "...")}
         </div>
       </div>`;
+}
+
+function textLengthOverCut(txt, len, lastTxt) {
+  if (len == "" || len == null) {
+    // 기본값
+    len = 20;
+  }
+  if (lastTxt == "" || lastTxt == null) {
+    // 기본값
+    lastTxt = "...";
+  }
+  if (txt.length > len) {
+    txt = txt.substr(0, len) + lastTxt;
+  }
+  return txt;
 }
 
 const body = document.querySelector("body");
