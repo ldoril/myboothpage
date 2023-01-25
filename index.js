@@ -1419,7 +1419,7 @@ const container = body.querySelector(".container");
 DATA.forEach((item, index) => {
   const image = item.image;
   const title = item.title;
-  const description = item.title;
+  const description = item.description;
   const url = item.url;
 
   container.innerHTML =
